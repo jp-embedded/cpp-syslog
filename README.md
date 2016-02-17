@@ -6,7 +6,7 @@ There is also a class to redirect eg cout/clog/cerr to syslog
 
 This code has do dependencies (except from libc and STL)
 
-This project is supported by jp-embedded ApS and is released under the GNU GPL v3
+This project is developed and supported by [jp-embedded ApS](http://jp-embedded.com) and is released under the [GNU GPL v3](http://www.gnu.org/licenses/gpl.html). 
 
 Example:
 

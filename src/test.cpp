@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
 	syslog::ostream log;
 	log << syslog::level::info << "info message 1" << std::endl;
 	log << "info message 2" << std::endl;
+	log << syslog::level::error << "error message 1" << std::endl;
 
 	// redirect cout, cerr and clog to syslog
 	syslog::redirect cout_redir(std::cout);

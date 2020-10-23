@@ -75,8 +75,10 @@ namespace syslog
 		streambuf _logbuf;
 		public:
 		ostream() : std::ostream(&_logbuf) {}
-		ostream& operator<<(const level::pri lev) { _logbuf.level(lev); return *this; }
+		void level(int level) { _logbuf.level(level); }
 	};
+
+	inline ostream& operator<<(ostream& os, const level::pri lev) { os.level(lev); return os; }
 
 	class redirect
 	{
@@ -85,7 +87,7 @@ namespace syslog
 		std::streambuf * const sbuf;
 
 		public:
-		redirect(std::ostream & src) : src(src), sbuf(src.rdbuf(dst.rdbuf())) { dst << (src == std::cout ? level::info : level::error); }
+		redirect(std::ostream & src) : src(src), sbuf(src.rdbuf(dst.rdbuf())) { dst << (&src == &std::cout ? level::info : level::error); }
 		~redirect() { src.rdbuf(sbuf); }
 	};
 }

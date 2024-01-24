@@ -4,7 +4,7 @@ This is a C++ output stream for logging to syslog.
 
 There is also a class to redirect eg cout/clog/cerr to syslog
 
-This code has do dependencies (except from libc and STL)
+This code has no dependencies (except from libc and STL)
 
 This project is developed and supported by [jp-embedded ApS](http://jp-embedded.com) and is released under the [GNU GPL v3](http://www.gnu.org/licenses/gpl.html). 
 
